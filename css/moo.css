@@ -1,0 +1,333 @@
+/**
+ * VideoJS Moonify CSS Skin (dubcanada) originally by (http://jlofstedt.com)
+ * Version 1.1
+ */
+
+.moo-css .vjs-controls {
+    color: #FFFFFF;
+    height: 43px;
+    opacity: 1;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.moo-css .vjs-controls {
+    -moz-border-radius: 0 0 0 0;
+    -moz-box-shadow: none;
+    -webkit-border-radius: 0 0 0 0;
+    -webkit-box-shadow: none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    background: none;
+    height: 40px;
+    padding: 0;
+    text-align: center;
+    bottom: 3px;
+    border: 0;
+    border: 0px;
+}
+
+    .moo-css .vjs-controls > div {
+        -moz-border-radius: 0 0 0 0;
+        -moz-box-shadow: none;
+        -webkit-border-radius: 0 0 0 0;
+        -webkit-box-shadow: none;
+        border-radius: 0 0 0 0;
+        box-shadow: none;
+        height: 40px;
+        padding: 0;
+        text-align: center;
+        bottom: 0;
+        border: 0px;
+    }
+
+/* ===[ Placement of Control Items ]=== */
+
+    .moo-css .vjs-controls > div.vjs-play-control {
+        width: 43px;
+        left: 3px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-progress-control {
+        left: 97px;
+        right: 165px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-current-time {
+        width: 52px;
+        left: 45px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-remaining-time {
+        width: 67px;
+        right: 98px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-volume-control {
+        width: 52px;
+        right: 46px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-separator {
+        width: 12px;
+        right: 46px;
+    }
+
+    .moo-css .vjs-controls > div.vjs-fullscreen-control {
+        width: 43px;
+        right: 3px;
+    }
+
+/** Play/Pause
+ * --------------------------------------------------------------------------------
+ */
+
+.moo-css .vjs-play-control {
+    top: 0;
+    margin: 0;
+    height: 40px;
+    background: url("../img/sprite_norepeat.png") no-repeat 0 -191px;
+    border: 0px;
+}
+
+.moo-css .vjs-play-control:active { background: url("../img/sprite_norepeat.png") no-repeat 0 -231px }
+
+.vjs-default-skin.vjs-paused .vjs-play-control div {
+    border: 0;
+    height: 40px;
+    margin: 0;
+    width: 43px;
+    background: url("../img/sprite_norepeat.png") no-repeat -69px -257px;
+}
+
+.vjs-default-skin.vjs-playing .vjs-play-control div {
+    border: 0;
+    height: 40px;
+    margin: 0;
+    width: 43px;
+    background: url("../img/sprite_norepeat.png") no-repeat -72px -203px;
+}
+
+/** Progress
+ * --------------------------------------------------------------------------------
+ */
+
+.moo-css div.vjs-progress-control {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    background: url("../img/sprite_repeat.png") repeat-x 0 -60px;
+    height: 40px;
+    top: 0;
+    border: 0px;
+}
+
+.moo-css .vjs-progress-control .vjs-progress-holder {
+    border: 0;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    overflow: visible;
+    z-index: 1000;
+    background: none;
+    top: 3px;
+}
+
+.moo-css .vjs-progress-control .vjs-play-progress {
+    height: 40px;
+    background: url("../img/sprite_repeat.png") repeat-x 0 -180px;
+    overflow: visible !important;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    filter: none;
+}
+
+.moo-css .vjs-progress-control .vjs-seek-handle {
+    height: 17px;
+    width: 17px;
+    background: url("../img/sprite_norepeat.png") no-repeat -81px -380px;
+    display: block;
+    position: relative;
+    left: -9px;
+    top: 12px;
+    -mox-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: none;
+    -moz-box-radius: none;
+    -webkit-box-radius: none;
+}
+
+.moo-css .vjs-progress-control .vjs-load-progress {
+    height: 40px;
+    background: url("../img/sprite_repeat.png") repeat-x 0 -120px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+/** Time Display
+ * --------------------------------------------------------------------------------
+ */
+
+.moo-css .vjs-controls .vjs-time-controls {
+    top: 0;
+    background: none;
+    border: 0px;
+    height: 40px;
+}
+
+.moo-css .vjs-controls .vjs-current-time {
+    cursor: default;
+    text-align: center;
+    background: url("../img/sprite_repeat.png") repeat-x 0 0;
+}
+
+    .moo-css .vjs-controls .vjs-current-time .vjs-current-time-display {
+        cursor: default;
+        nowhitespace: afterproperty;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 0 0 12px;
+        text-align: left;
+        /* Centering vertically */
+    }
+
+.moo-css .vjs-controls .vjs-remaining-time {
+    cursor: default;
+    text-align: center;
+    background: url("../img/sprite_repeat.png") repeat-x 0 0;
+}
+
+    .moo-css .vjs-controls .vjs-remaining-time .vjs-remaining-time-display {
+        background: url("../img/sprite_norepeat.png") no-repeat -37px -312px;
+        nowhitespace: afterproperty;
+        cursor: default;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 0 0 13px;
+        text-align: left;
+        /* Centering vertically */
+    }
+
+/** Volume
+ * --------------------------------------------------------------------------------
+ */
+
+.moo-css .vjs-volume-control {
+    position: absolute;
+    background: url("../img/sprite_repeat.png") repeat-x 0 0;
+    cursor: default;
+    float: left;
+    height: 22px;
+    padding: 18px 0 0;
+    width: 40px;
+}
+
+    .moo-css .vjs-volume-control .vjs-volume-bar {
+        width: 40px;
+        margin: 0px;
+        top: 18px;
+        height: 5px;
+        background: #2d2e2f;
+        -webkit-transition: all 100ms linear;
+        -moz-transition: all 100ms linear;
+        cursor: pointer !important;
+        border: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+    }
+
+        .moo-css .vjs-volume-control .vjs-volume-bar .vjs-volume-level {
+            background: url("../img/sprite_repeat.png") repeat-x 0 -240px;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+        }
+
+        .moo-css .vjs-volume-control .vjs-volume-bar .vjs-volume-handle { display: none }
+
+.moo-css .vjs-mute-control { display: none }
+
+/** Fullscreen
+ * --------------------------------------------------------------------------------
+ */
+
+.moo-css .vjs-fullscreen-control {
+    height: 40px;
+    background: url("../img/sprite_norepeat.png") no-repeat 0 -103px;
+    width: 43px;
+    margin: 0;
+}
+
+.moo-css.fullscreen .vjs-fullscreen-control { background: url("../img/sprite_norepeat.png") no-repeat 0 -143px }
+
+.moo-css .vjs-controls .vjs-fullscreen-control {
+
+}
+
+/* ===[ Making default fullscreen icon smaller ]=== */
+
+.moo-css .vjs-fullscreen-control div {
+    border: 0;
+    height: 40px;
+    margin: 0;
+    width: 43px;
+    background: url("../img/sprite_norepeat.png") no-repeat -67px -148px;
+}
+
+.moo-css.vjs-fullscreen .vjs-fullscreen-control div {
+    border: 0;
+    height: 40px;
+    margin: 0;
+    width: 43px;
+    background: url("../img/sprite_norepeat.png") no-repeat -67px -91px;
+}
+
+/** Big Play Button (at start)
+ * ---------------------------------------------------------
+ */
+
+.moo-css div.vjs-big-play-button {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 98px;
+    height: 96px;
+    margin: -43px 0 0 -43px;
+    text-align: center;
+    vertical-align: center;
+    cursor: pointer !important;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    opacity: 0.9;
+    background: url("../img/sprite_norepeat.png") no-repeat 0 0;
+}
+
+.moo-css div.vjs-big-play-button:hover {
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    opacity: 1;
+}
+
+.moo-css div.vjs-big-play-button span { display: none }
+
+.moo-css div.vjs-big-play-button:active { margin: -42px 0 0 -43px }
