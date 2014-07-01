@@ -1,17 +1,40 @@
 /**
  * VideoJS Moonify CSS Skin (dubcanada) originally by (http://jlofstedt.com)
- * Version 1.1
+ * Version 1.2
  */
-
-.moo-css .vjs-controls {
-    color: #FFFFFF;
-    height: 43px;
-    opacity: 1;
-    width: 90%;
-    margin: 0 auto;
+ 
+ 
+/* Turn off captions, live-controls and subtitles */
+.moo-css .vjs-control-bar .vjs-captions-button ,
+.moo-css .vjs-control-bar .vjs-live-controls,
+.moo-css .vjs-control-bar .vjs-subtitles-button {
+	display: none;
 }
 
-.moo-css .vjs-controls {
+/* Hide font based widgets in latest video.js */
+.moo-css .vjs-big-play-button:before,
+.moo-css .vjs-control-bar *:before{
+	content: "";
+	display: none;
+}
+
+/* Reset background color and effects on big-play-button */
+.moo-css .vjs-default-skin .vjs-big-play-button:focus,
+.moo-css .vjs-default-skin:hover .vjs-big-play-button {
+    border-color: inherit;
+    background-color: transparent;
+    box-shadow: inherit;
+    transition: inherit;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.moo-css .vjs-control-bar {
     -moz-border-radius: 0 0 0 0;
     -moz-box-shadow: none;
     -webkit-border-radius: 0 0 0 0;
@@ -19,15 +42,22 @@
     border-radius: 0 0 0 0;
     box-shadow: none;
     background: none;
-    height: 40px;
     padding: 0;
     text-align: center;
     bottom: 3px;
     border: 0;
     border: 0px;
+	
+	color: #FFFFFF;
+    height: 43px;
+    opacity: 1;
+    width: 90%;
+    margin: 0 auto;
+	background: url("../img/sprite_repeat.png") repeat-x 0 0;
+	
 }
 
-    .moo-css .vjs-controls > div {
+    .moo-css .vjs-control-bar > div {
         -moz-border-radius: 0 0 0 0;
         -moz-box-shadow: none;
         -webkit-border-radius: 0 0 0 0;
@@ -43,40 +73,40 @@
 
 /* ===[ Placement of Control Items ]=== */
 
-    .moo-css .vjs-controls > div.vjs-play-control {
+    .moo-css .vjs-control-bar > div.vjs-play-control {
         width: 43px;
-        left: 3px;
     }
 
-    .moo-css .vjs-controls > div.vjs-progress-control {
-        left: 97px;
-        right: 165px;
+    .moo-css .vjs-control-bar > div.vjs-progress-control {
+		width: 200px;
+		position: relative;
     }
 
-    .moo-css .vjs-controls > div.vjs-current-time {
+    .moo-css .vjs-control-bar > div.vjs-current-time {
         width: 52px;
-        left: 45px;
     }
 
-    .moo-css .vjs-controls > div.vjs-remaining-time {
+    .moo-css .vjs-control-bar > div.vjs-remaining-time {
         width: 67px;
-        right: 98px;
     }
-
-    .moo-css .vjs-controls > div.vjs-volume-control {
+    
+	.moo-css .vjs-control-bar > div.vjs-volume-control {
         width: 52px;
-        right: 46px;
+		float: right;
     }
-
-    .moo-css .vjs-controls > div.vjs-separator {
+	
+    .moo-css .vjs-control-bar > div.vjs-separator {
         width: 12px;
-        right: 46px;
     }
 
-    .moo-css .vjs-controls > div.vjs-fullscreen-control {
+    .moo-css .vjs-control-bar > div.vjs-fullscreen-control {
         width: 43px;
-        right: 3px;
+		float: right;
     }
+
+	.moo-css .vjs-control-bar > div.vjs-mute-control { 
+		float: right;
+	}
 
 /** Play/Pause
  * --------------------------------------------------------------------------------
@@ -100,6 +130,24 @@
     background: url("../img/sprite_norepeat.png") no-repeat -69px -257px;
 }
 
+.moo-css .vjs-control-bar > div.vjs-mute-control div { 
+    border: 0;
+    height: 40px;
+    margin: 0;
+    width: 43px;
+	background: url("../img/sprite_norepeat.png") no-repeat -70px -312px;
+}
+
+.moo-css .vjs-control-bar > div.vjs-mute-control.vjs-vol-0 div { 
+	opacity: 0.1;
+}
+
+
+
+
+
+
+
 .vjs-default-skin.vjs-playing .vjs-play-control div {
     border: 0;
     height: 40px;
@@ -116,7 +164,6 @@
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
-    background: url("../img/sprite_repeat.png") repeat-x 0 -60px;
     height: 40px;
     top: 0;
     border: 0px;
@@ -133,7 +180,6 @@
     overflow: visible;
     z-index: 1000;
     background: none;
-    top: 3px;
 }
 
 .moo-css .vjs-progress-control .vjs-play-progress {
@@ -174,37 +220,28 @@
  * --------------------------------------------------------------------------------
  */
 
-.moo-css .vjs-controls .vjs-time-controls {
+.moo-css .vjs-control-bar .vjs-time-controls {
     top: 0;
     background: none;
     border: 0px;
     height: 40px;
 }
 
-.moo-css .vjs-controls .vjs-current-time {
+.moo-css .vjs-control-bar .vjs-current-time,
+.moo-css .vjs-control-bar .vjs-time-divider,
+.moo-css .vjs-control-bar .vjs-duration {
     cursor: default;
     text-align: center;
-    background: url("../img/sprite_repeat.png") repeat-x 0 0;
+    height: 40px;
+    line-height: 40px;
 }
 
-    .moo-css .vjs-controls .vjs-current-time .vjs-current-time-display {
-        cursor: default;
-        nowhitespace: afterproperty;
-        display: block;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 0 0 12px;
-        text-align: left;
-        /* Centering vertically */
-    }
-
-.moo-css .vjs-controls .vjs-remaining-time {
+.moo-css .vjs-control-bar .vjs-remaining-time {
     cursor: default;
     text-align: center;
-    background: url("../img/sprite_repeat.png") repeat-x 0 0;
 }
 
-    .moo-css .vjs-controls .vjs-remaining-time .vjs-remaining-time-display {
+    .moo-css .vjs-control-bar .vjs-remaining-time .vjs-remaining-time-display {
         background: url("../img/sprite_norepeat.png") no-repeat -37px -312px;
         nowhitespace: afterproperty;
         cursor: default;
@@ -221,8 +258,6 @@
  */
 
 .moo-css .vjs-volume-control {
-    position: absolute;
-    background: url("../img/sprite_repeat.png") repeat-x 0 0;
     cursor: default;
     float: left;
     height: 22px;
@@ -253,9 +288,6 @@
         }
 
         .moo-css .vjs-volume-control .vjs-volume-bar .vjs-volume-handle { display: none }
-
-.moo-css .vjs-mute-control { display: none }
-
 /** Fullscreen
  * --------------------------------------------------------------------------------
  */
@@ -269,9 +301,6 @@
 
 .moo-css.fullscreen .vjs-fullscreen-control { background: url("../img/sprite_norepeat.png") no-repeat 0 -143px }
 
-.moo-css .vjs-controls .vjs-fullscreen-control {
-
-}
 
 /* ===[ Making default fullscreen icon smaller ]=== */
 
